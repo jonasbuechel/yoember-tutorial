@@ -1,14 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+
     model() {
-        return this.store.createRecord('contact');
+        return this.store.createRecord('library');
     },
 
     actions: {
 
-        saveMessage(newMessage) {
-            newMessage.save().then(() => this.transitionTo('index'));
+        saveLibrary(newLibrary) {
+            newLibrary.save().then(() => this.transitionTo('libraries'));
         },
 
         willTransition() {
